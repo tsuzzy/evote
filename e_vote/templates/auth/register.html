@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    <label for="username">Username</label>
+    <input name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <label for="password">ID Number</label>
+    <input name="id_number" id="id_number" required>
+    <label for="realname">Your Real Name</label>
+    <input name="realname" id="realname" required>
+    <select name="type_select">
+      <option value="voter">Voter</option>
+      <option value="candidate">Candidate</option>
+      <option value="EA">Election Admin</option>
+    </select>
+    <input type="submit" value="Register">
+  </form>
+{% endblock %}
