@@ -1,0 +1,32 @@
+{% extends 'base1.html' %}
+
+{% block menubar %}
+  <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
+  <li class="selected"><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
+  <li><a href="page.html">发布投票</a></li>
+  <li><a href="another_page.html">投票结果</a></li>
+{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}已发布报名{% endblock %}</h1>
+    {% if g.user %}
+      <a class="action" href="{{ url_for('admin.create_election') }}">新建</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% for election_info in posts %}
+    <article class="post">
+      <header>
+        <div>
+          <h1>{{ election_info['title'] }}</h1>
+          <div class="about">by {{ election_info['username'] }} on {{ election_info['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+      </header>
+      <p class="body">{{ election_info['body'] }}</p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
