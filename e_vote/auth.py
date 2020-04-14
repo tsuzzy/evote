@@ -95,7 +95,7 @@ def login():
             if error is None:
                 session.clear()
                 session['user_id'] = user['id']
-                return redirect(url_for('admin.admin_home')) #change
+                return redirect(url_for('user.user_home'))
 
         elif type=='admin':
             admin = db.execute(
@@ -110,7 +110,7 @@ def login():
             if error is None:
                 session.clear()
                 session['admin_id'] = admin['id']
-                return redirect(url_for('admin.admin_home')) #change
+                return redirect(url_for('admin.admin_home'))
 
         flash(error)
 

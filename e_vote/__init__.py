@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from datetime import timedelta
 
 def create_app(test_config=None):
     # create and configure the app
@@ -9,6 +10,7 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'e_vote.sqlite'),
     )
+    app.config['DEBUG']=True
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -32,6 +34,9 @@ def create_app(test_config=None):
 
     from . import admin
     app.register_blueprint(admin.bp)
+
+    from . import user
+    app.register_blueprint(user.bp)
 
     from . import blog
     app.register_blueprint(blog.bp)

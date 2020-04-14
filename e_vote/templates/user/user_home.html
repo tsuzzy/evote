@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+  <ul id="menu">
+    <li class="selected"><a href="{{ url_for('user.user_home') }}">主页</a></li>
+    <li><a href="{{ url_for('user.notif') }}">竞选公告</a></li>
+    <li><a href="page.html">参与投票</a></li>
+    <li><a href="another_page.html">投票结果</a></li>
+  </ul>
+{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}欢迎来到E_VOTE用户系统{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h4>使用手册</h4>
+{% endblock %}

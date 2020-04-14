@@ -1,23 +1,26 @@
-{% extends 'base1.html' %}
+{% extends 'base.html' %}
 
-{% block menubar %}
-  <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
-  <li class="selected"><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
-  <li><a href="page.html">发布投票</a></li>
-  <li><a href="another_page.html">投票结果</a></li>
+{% block menu %}
+  <ul id="menu">
+    <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
+    <li><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
+    <li><a href="page.html">发布投票</a></li>
+    <li><a href="another_page.html">投票结果</a></li>
+    <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+  </ul>
 {% endblock %}
 
 {% block header %}
   <h1>{% block title %}新建选举报名{% endblock %}</h1>
-  <a class="action" href="{{ url_for('admin.election_register') }}">返回</a>
+  <a class="action" href="{{ url_for('admin.election_register') }}"><h6>返回</h6></a>
 {% endblock %}
 
 {% block content %}
   <form method="POST">
-    <label for="title">标题</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">内容</label>
-    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <label for="title"><h4>标题</h4></label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required><br>
+    <label for="body"><h4>内容</h4></label>
+    <textarea name="body" id="body" placeholder="请在此处输入">{{ request.form['body'] }}</textarea><br>
     <input type="submit" value="Save">
   </form>
 {% endblock %}

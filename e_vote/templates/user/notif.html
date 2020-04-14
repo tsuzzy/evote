@@ -2,22 +2,22 @@
 
 {% block menu %}
   <ul id="menu">
-    <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
-    <li class="selected"><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
-    <li><a href="page.html">发布投票</a></li>
+    <li><a href="{{ url_for('user.user_home') }}">主页</a></li>
+    <li class="selected"><a href="{{ url_for('user.notif') }}">竞选公告</a></li>
+    <li><a href="page.html">参与投票</a></li>
     <li><a href="another_page.html">投票结果</a></li>
   </ul>
 {% endblock %}
 
 {% block header %}
   <h1>{% block title %}已发布报名{% endblock %}</h1>
-    {% if g.user %}
+    <!--{% if g.user %}
       <a class="action" href="{{ url_for('admin.create_election') }}">New</a>
-    {% endif %}
+    {% endif %}-->
 {% endblock %}
 
 {% block content %}
-{% for election_info in posts %}
+  {% for election_info in posts %}
     <article class="post">
       <header>
         <div>
@@ -27,7 +27,6 @@
       </header>
       <p class="body">{{ election_info['body'] }}</p>
     </article>
-    <input type="submit" value="查看报名">
     {% if not loop.last %}
       <hr>
     {% endif %}

@@ -1,5 +1,5 @@
 html {
-  font-family: sans-serif;
+  font-family: arial;
   background: #eee;
   padding: 1rem;
 }
@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: serif;
+  font-family: "微软雅黑";
   color: #377ba8;
   margin: 1rem 0;
 }
@@ -53,6 +53,40 @@ nav ul li a, nav ul li span, header .action {
   display: block;
   padding: 0.5rem;
 }
+
+div#menubar
+{ margin-left: auto;
+  margin-right: auto;
+  width: 898px;
+  height: 52px;
+  padding: 0;
+  background: transparent url(transparent.png) repeat;}
+
+div ul#menu, div ul#menu li
+{ float: left;
+  margin: 0;
+  padding: 0;}
+
+div ul#menu li
+{ list-style: none;}
+
+div ul#menu li a
+{ letter-spacing: 0.1em;
+  font: normal 100% arial, sans-serif;
+  display: block;
+  float: left;
+  height: 17px;
+  margin: 10px 0 0 10px;
+  padding: 9px 26px 6px 26px;
+  text-align: center;
+  color: #FFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;}
+
+ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
+{ color: #1E90FF;
+  background: transparent url(transparent_light.png) repeat;}
 
 .content {
   padding: 0 1rem 1rem;
