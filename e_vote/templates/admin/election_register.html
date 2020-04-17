@@ -4,7 +4,7 @@
   <ul id="menu">
     <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
     <li class="selected"><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
-    <li><a href="page.html">发布投票</a></li>
+    <li><a href="{{ url_for('admin.push_vote') }}">发布投票</a></li>
     <li><a href="another_page.html">投票结果</a></li>
   </ul>
 {% endblock %}
@@ -12,7 +12,7 @@
 {% block header %}
   <h1>{% block title %}已发布报名{% endblock %}</h1>
     {% if g.user %}
-      <a class="action" href="{{ url_for('admin.create_election') }}">New</a>
+      <a class="action" href="{{ url_for('admin.create_election') }}"><h3>新建</h3></a>
     {% endif %}
 {% endblock %}
 

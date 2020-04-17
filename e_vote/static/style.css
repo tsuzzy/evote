@@ -1,13 +1,15 @@
 html {
   font-family: arial;
-  background: #eee;
+  background: #c3d7df;
   padding: 1rem;
 }
 
 body {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0 auto;
   background: white;
+  border: transparent;
+  border-radius: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,7 +36,8 @@ nav {
 
 nav h1 {
   flex: auto;
-  margin: 0;
+  margin: 20px;
+  color: #4682B4;
 }
 
 nav h1 a {
@@ -54,13 +57,71 @@ nav ul li a, nav ul li span, header .action {
   padding: 0.5rem;
 }
 
+input#username, input#password, input#id_number, input#realname{
+  outline-style: none;
+  border: 1px solid #ccc;
+  border-radius: 3.5px;
+  padding: 5px 0px;
+  width: 250px;
+  font-size: 18px;
+  font-family: "Arial";
+}
+
+input#sub{
+  outline-style: none;
+  border: 1px solid #93b5cf;
+  border-radius: 3.5px;
+  padding: 5px 0px;
+  width: 250px;
+  font-size: 20px;
+  font-family: "微软雅黑";
+  background: #d8e3e7;
+}
+
+input#save{
+  outline-style: none;
+  border: 1px solid #93b5cf;
+  border-radius: 2px;
+  padding: 2px 0px;
+  width: 50px;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  background: lightgray;
+}
+
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+select{
+  outline-style: none;
+  border: 1px solid #ccc;
+  border-radius:3px;
+  padding: 5px;
+  width:250px;
+  font-size: 16px;
+  font-family:"微软雅黑";
+}
+
+select:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+
 div#menubar
 { margin-left: auto;
   margin-right: auto;
-  width: 898px;
+  max-width: 800px;
   height: 52px;
   padding: 0;
-  background: transparent url(transparent.png) repeat;}
+  background: darkgray;
+}
 
 div ul#menu, div ul#menu li
 { float: left;
@@ -85,8 +146,15 @@ div ul#menu li a
   background: transparent;}
 
 ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
-{ color: #1E90FF;
+{ color: #377ba8;
   background: transparent url(transparent_light.png) repeat;}
+
+div#signup{
+  margin-left: 80px;
+  max-width: 800px;
+  padding: auto;
+  background: white;
+}
 
 .content {
   padding: 0 1rem 1rem;

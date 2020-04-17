@@ -48,7 +48,8 @@ CREATE TABLE vote(
   election_number INTEGER NOT NULL,
   num INTEGER NOT NULL,
   FOREIGN KEY (voter_id) REFERENCES user (user_id),
-  FOREIGN KEY (election_number) REFERENCES election_info (info_id)
+  FOREIGN KEY (election_number) REFERENCES election_info (info_id),
+  FOREIGN KEY (num) REFERENCES candidate_list (calcu_id)
 );
 
 CREATE TABLE result(

@@ -6,14 +6,15 @@
 
 {% block content %}
   <form method="post">
-    <label for="username">Username</label>
+    <label for="username">用户名</label>
     <input name="username" id="username" required>
-    <label for="password">Password</label>
+    <label for="password">密码</label>
     <input type="password" name="password" id="password" required>
+    <label for="password">登录用户类型</label>
     <select name="type_select">
-      <option value="user">用户</option>
-      <option value="admin">管理员</option>
-    </select>
-    <input type="submit" value="登录">
+      <option value="user">普通用户</option>
+      <option value="admin">投票管理员</option>
+    </select><br>
+    <input type="submit" value="登录" id="sub">
   </form>
 {% endblock %}

@@ -109,7 +109,7 @@ def login():
 
             if error is None:
                 session.clear()
-                session['admin_id'] = admin['id']
+                session['user_id'] = admin['id']
                 return redirect(url_for('admin.admin_home'))
 
         flash(error)
@@ -124,20 +124,27 @@ def load_logged_in_user():
     if user_id is None:
         g.user=None
     else:
-        g.user=get_db().execute(
-            'SELECT * FROM user WHERE id = ?',(user_id,)
+        g.user = get_db().execute(
+            'SELECT * FROM user WHERE id = ?', (user_id,)
         ).fetchone()
+        if g.user==None:
+            g.user = get_db().execute(
+                'SELECT * FROM admin WHERE id = ?', (user_id,)
+            ).fetchone()
+    # elif login.type=='admin':
+    #     g.user=get_db().execute(
+    #         'SELECT * FROM admin WHERE id = ?',(user_id,)
+    #     ).fetchone()
 
-@bp.before_app_request
-def load_logged_in_admin():
-    admin_id = session.get('admin_id')
-
-    if admin_id is None:
-        g.user=None
-    else:
-        g.user=get_db().execute(
-            'SELECT * FROM admin WHERE id = ?',(admin_id,)
-        ).fetchone()
+# def load_logged_in_admin():
+#     admin_id = session.get('admin_id')
+#
+#     if admin_id is None:
+#         g.user=None
+#     else:
+#         g.user=get_db().execute(
+#             'SELECT * FROM admin WHERE id = ?',(admin_id,)
+#         ).fetchone()
 
 @bp.route('/logout')
 def logout():

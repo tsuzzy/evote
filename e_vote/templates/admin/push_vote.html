@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+  <ul id="menu">
+    <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
+    <li><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
+    <li class="selected"><a href="{{ url_for('admin.push_vote') }}">发布投票</a></li>
+    <li><a href="{{ url_for('admin.result') }}">投票结果</a></li>
+  </ul>
+{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}报名汇总{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+{% for election_info in posts %}
+    <article class="post">
+      <header>
+        <div>
+            <h1><a href="{{ url_for('admin.candidate') }}">{{ election_info['title'] }}</a></h1><!-- link-->
+          <div class="about">by {{ election_info['username'] }} on {{ election_info['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+      </header>
+    </article>
+    <input type="submit" value="发布投票">
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

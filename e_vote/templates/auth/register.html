@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Register{% endblock %}</h1>
+  <h1>{% block title %}注册{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-  <form method="POST">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <label for="password">ID Number</label>
-    <input name="id_number" id="id_number" required>
-    <label for="realname">Your Real Name</label>
-    <input name="realname" id="realname" required>
-    <select name="type_select">请选择
-      <option value="user">用户</option>
-      <option value="admin">投票管理员</option>
-    </select>
-    <input type="submit" value="Register">
-  </form>
+  <div id="signup">
+    <form method="POST">
+      <label for="username">用户名</label>
+      <input name="username" id="username" required>
+      <label for="password">密码</label>
+      <input type="password" name="password" id="password" required>
+      <label for="password">身份证号</label>
+      <input name="id_number" id="id_number" required>
+      <label for="realname">真实姓名</label>
+      <input name="realname" id="realname" required>
+      <label for="select1">请选择注册身份</label>
+      <select name="type_select" id="select1">
+        <option value="user">普通用户</option>
+        <option value="admin">投票管理员</option>
+      </select><br>
+      <input type="submit" value="注册" id="sub">
+    </form>
+  </div>
 {% endblock %}

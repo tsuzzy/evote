@@ -23,13 +23,15 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/VotingApplication-master/VotingApplication-master" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -41,13 +43,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585987990808</updated>
+      <workItem from="1587089091709" duration="392000" />
+      <workItem from="1587091632946" duration="1861000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="49" y="210" key="#SQL_Dialects" timestamp="1587089182389">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="49" y="210" key="#SQL_Dialects/0.0.1366.738@0.0.1366.738" timestamp="1587089182389" />
+    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587089211160">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1587089211160" />
     <state x="535" y="196" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586249044722">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -56,9 +71,17 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="574" y="168" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1586311547801" />
-    <state x="453" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1586874915809">
+    <state x="137" y="4" key="SettingsEditor" timestamp="1587092971701">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="453" y="235" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1586874915809" />
+    <state x="137" y="4" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587092971701" />
+    <state x="453" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1587081637710">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="453" y="235" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1587081637710" />
+    <state x="273" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1586955205887">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="273" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1586955205887" />
   </component>
 </project>
