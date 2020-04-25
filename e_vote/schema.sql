@@ -36,7 +36,7 @@ CREATE TABLE candidate_list(
   candidate_id INTEGER NOT NULL,
   candidate_name TEXT NOT NULL,
   discription TEXT,
-  calcu_id INTEGER NOT NULL,
+  calcu_id INTEGER,
   FOREIGN KEY (election_number) REFERENCES election_info (info_id),
   FOREIGN KEY (candidate_id) REFERENCES user (user_id),
   FOREIGN KEY (candidate_name) REFERENCES user (realname)

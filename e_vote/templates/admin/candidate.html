@@ -15,30 +15,18 @@
 {% endblock %}
 
 {% block content %}
-<article class="post">
-    <header>
+  {% for candidate_list in posts %}
+    <article class="post">
+      <header>
         <div>
-            <h4>罗思芬, 34011</h4>
+          <h1>{{ candidate_list['candidate_name'] }}, {{ candidate_list['candidate_id'] }}</h1>
+          <h4>选举场次：{{ candidate_list['election_number'] }}</h4>
         </div>
-    </header>
-        <p class="body">自我介绍：我是个正经人，爱好就是嗦粉，大家自己看着办吧。</p>
-</article>
-<hr>
-<article class="post">
-    <header>
-        <div>
-            <h4>海大白水鸭, 34016</h4>
-        </div>
-    </header>
-        <p class="body">自我介绍：潜水技能满分；热爱图书馆，热爱镜湖。选我我会安排所有课都在水中进行~</p>
-</article>
-<hr>
-<article class="post">
-    <header>
-        <div>
-            <h4>海大大白鹅, 23013</h4>
-        </div>
-    </header>
-        <p class="body">自我介绍：爱好起早学习和锻炼，最爱的运动项目是游泳。肤白貌美，希望大家选我，谢谢！</p>
-</article>
+      </header>
+      <p class="body">{{ candidate_list['discription'] }}</p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
 {% endblock %}

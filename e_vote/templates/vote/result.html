@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+  <ul id="menu">
+    <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
+    <li><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
+    <li><a href="{{ url_for('admin.push_vote') }}">发布投票</a></li>
+    <li class="selected"><a href="{{ url_for('vote.result') }}">投票结果</a></li>
+  </ul>
+{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}选举结果{% endblock %}</h1>
+  <a class="action" href="{{ url_for('vote.result') }}"><h3>返回</h3></a>
+{% endblock %}
+
+{% block content %}
+<header>
+    <h3>学习委员竞选公告</h3>
+</header>
+<p class="body">屈天舒：0.57</p><br>
+<p class="body">何夕西：0.29</p><br>
+<p class="body">李明明：0.14</p>
+<header>
+    <h3>班长竞选公告</h3><hr>
+</header>
+<input type="submit" value="返回" id="save">
+{% endblock %}

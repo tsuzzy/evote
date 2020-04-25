@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 
 {% block menu %}
   <ul id="menu">
     <li class="selected"><a href="{{ url_for('user.user_home') }}">主页</a></li>
     <li><a href="{{ url_for('user.notif') }}">竞选公告</a></li>
-    <li><a href="page.html">参与投票</a></li>
-    <li><a href="another_page.html">投票结果</a></li>
+    <li><a href="{{ url_for('user.votelist') }}">参与投票</a></li>
+    <li><a href="{{ url_for('vote.result') }}">投票结果</a></li>
   </ul>
 {% endblock %}
 
@@ -14,5 +14,10 @@
 {% endblock %}
 
 {% block content %}
-  <h4>使用手册</h4>
+ <h4>使用手册</h4>
+<h5>请仔细阅读以下手册内容，再进行系统操作</h5>
+<h5>1.点击“竞选公告”，可查看选举公告板。点击“报名”填写个人信息参加选举。</h5>
+<h5>2.如需参与投票，在“参与投票”页面进入对应公告标题，参与投票并提交</h5>
+<h5>3.进入“投票结果”页面，待投票结果公布后，可查看选举统计结果。</h5>
+<h4>祝您使用愉快！</h4>
 {% endblock %}

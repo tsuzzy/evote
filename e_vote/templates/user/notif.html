@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 
 {% block menu %}
   <ul id="menu">
@@ -11,9 +11,9 @@
 
 {% block header %}
   <h1>{% block title %}已发布报名{% endblock %}</h1>
-    <!--{% if g.user %}
-      <a class="action" href="{{ url_for('admin.create_election') }}">New</a>
-    {% endif %}-->
+    {% if g.user %}
+      <a class="action" href="{{ url_for('user.enroll_form') }}">报名</a>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -22,7 +22,8 @@
       <header>
         <div>
           <h1>{{ election_info['title'] }}</h1>
-          <div class="about">by {{ election_info['username'] }} on {{ election_info['created'].strftime('%Y-%m-%d') }}</div>
+          <h4>选举场次：{{ election_info['info_id'] }}</h4>
+          <div class="about">由 {{ election_info['username'] }} 创建于 {{ election_info['created'].strftime('%Y-%m-%d') }}</div>
         </div>
       </header>
       <p class="body">{{ election_info['body'] }}</p>

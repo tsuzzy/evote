@@ -5,7 +5,7 @@
     <li><a href="{{ url_for('admin.admin_home') }}">主页</a></li>
     <li class="selected"><a href="{{ url_for('admin.election_register') }}">发布报名</a></li>
     <li><a href="{{ url_for('admin.push_vote') }}">发布投票</a></li>
-    <li><a href="another_page.html">投票结果</a></li>
+    <li><a href="{{ url_for('admin.result') }}">投票结果</a></li>
   </ul>
 {% endblock %}
 

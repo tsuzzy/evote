@@ -4,7 +4,11 @@ from flask import (
 )
 from werkzeug.security import check_password_hash,generate_password_hash
 from e_vote.db import get_db
+from datetime import datetime
+
+
 bp=Blueprint('auth', __name__, url_prefix='/auth')
+
 
 # Users Register -- Voter, Candidate, Election Authority
 @bp.route('/register', methods=('GET', 'POST'))
@@ -23,32 +27,32 @@ def register():
             error='You must select one identity type.'
         elif type=='user':
             if not username:
-                error = 'Username is required.'
+                error = '请输入用户名.'
             elif not password:
-                error = 'Password is required.'
+                error = '请输入密码.'
             elif not id_number:
-                error = 'ID Number is required.'
+                error = '请输入证件号码.'
             elif not realname:
-                error = 'Real Name is required.'
+                error = '真实姓名为必填项.'
             elif db.execute(
                     'SELECT user_id FROM user WHERE user_id=?',
                     (id_number,)
             ).fetchone() is not None:
-                error = 'User {} is already registered.'.format(realname)
+                error = '用户 {} 已存在.'.format(realname)
         elif type=='admin':
             if not username:
-                error = 'Username is required.'
+                error = '请输入用户名.'
             elif not password:
-                error = 'Password is required.'
+                error = '请输入密码.'
             elif not id_number:
-                error = 'ID Number is required.'
+                error = '请输入证件号码.'
             elif not realname:
-                error = 'Real Name is required.'
+                error = '真实姓名为必填项.'
             elif db.execute(
                     'SELECT admin_id FROM admin WHERE admin_id=?',
                     (id_number,)
             ).fetchone() is not None:
-                error = 'Admin {} is already registered.'.format(realname)
+                error = '管理员 {} 已存在.'.format(realname)
 
         # Register
         if error is None:
@@ -65,6 +69,7 @@ def register():
                     (username,generate_password_hash(password),id_number,realname)
                 )
                 db.commit()
+
                 return redirect(url_for('auth.login'))
 
         flash(error)
@@ -75,22 +80,22 @@ def register():
 
 @bp.route('login',methods=('GET','POST'))
 def login():
-    if request.method=='POST':
-        username=request.form['username']
-        password=request.form['password']
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
         type = request.form.get('type_select')
-        db=get_db()
-        error=None
+        db = get_db()
+        error = None
 
-        if type=='user':
+        if type == 'user':
             user = db.execute(
                 'SELECT * FROM user WHERE username=?', (username,)
             ).fetchone()
 
             if user is None:
-                error = 'You have not registered yet.'
+                error = '您尚未注册.'
             elif not check_password_hash(user['password'], password):
-                error = 'Incorrect password.'
+                error = '密码错误.'
 
             if error is None:
                 session.clear()
@@ -103,13 +108,13 @@ def login():
             ).fetchone()
 
             if admin is None:
-                error = 'You have not registered yet.'
+                error = '您尚未注册.'
             elif not check_password_hash(admin['password'], password):
-                error = 'Incorrect password.'
+                error = '密码错误.'
 
             if error is None:
                 session.clear()
-                session['user_id'] = admin['id']
+                session['admin_id'] = admin['id']
                 return redirect(url_for('admin.admin_home'))
 
         flash(error)
@@ -120,36 +125,25 @@ def login():
 @bp.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
+    admin_id = session.get('admin_id')
 
     if user_id is None:
-        g.user=None
-    else:
+        g.user = get_db().execute(
+            'SELECT * FROM admin WHERE id = ?', (admin_id,)
+        ).fetchone()
+    elif admin_id is None:
         g.user = get_db().execute(
             'SELECT * FROM user WHERE id = ?', (user_id,)
         ).fetchone()
-        if g.user==None:
-            g.user = get_db().execute(
-                'SELECT * FROM admin WHERE id = ?', (user_id,)
-            ).fetchone()
-    # elif login.type=='admin':
-    #     g.user=get_db().execute(
-    #         'SELECT * FROM admin WHERE id = ?',(user_id,)
-    #     ).fetchone()
+    else:
+        g.user=None
 
-# def load_logged_in_admin():
-#     admin_id = session.get('admin_id')
-#
-#     if admin_id is None:
-#         g.user=None
-#     else:
-#         g.user=get_db().execute(
-#             'SELECT * FROM admin WHERE id = ?',(admin_id,)
-#         ).fetchone()
 
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    g.user = None
+    return redirect(url_for('auth.login'))
 
 def login_required(view):
     @functools.wraps(view)

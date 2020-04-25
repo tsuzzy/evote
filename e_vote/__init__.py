@@ -1,11 +1,12 @@
 import os
 from flask import Flask
 from datetime import timedelta
+from flask_login import LoginManager
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    # set default configuration
+    #set default configuration
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'e_vote.sqlite'),
@@ -25,7 +26,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-
     from . import db
     db.init_app(app)
 
@@ -38,8 +38,12 @@ def create_app(test_config=None):
     from . import user
     app.register_blueprint(user.bp)
 
+    from . import vote
+    app.register_blueprint(vote.bp)
+
     from . import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/',endpoint='index')
 
     return app
+

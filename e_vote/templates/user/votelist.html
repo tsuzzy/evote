@@ -1,0 +1,27 @@
+{% extends 'base1.html' %}
+
+{% block menu %}
+  <ul id="menu">
+    <li><a href="{{ url_for('user.user_home') }}">主页</a></li>
+    <li><a href="{{ url_for('user.notif') }}">竞选公告</a></li>
+    <li class="selected"><a href="{{ url_for('user.votelist') }}">参与投票</a></li>
+    <li><a href="another_page.html">投票结果</a></li>
+  </ul>
+{% endblock %}
+{% block header %}
+  <h1>{% block title %}投票列表{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<form name="option" method="POST">
+  {% for candidate_list in posts %}
+    <div>
+       <input type="radio" value="{{ candidate_list['candidate_id'] }}" name="vote"><b>{{ candidate_list['candidate_name'] }}</b>
+        <p class="body">{{ candidate_list['discription'] }}</p>
+    </div>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+  <input type="submit" value="提交" id="sub">
+</form>
+{% endblock %}

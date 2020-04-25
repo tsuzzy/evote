@@ -12,6 +12,7 @@
       <list>
         <option value="HTML4 File" />
         <option value="Python Script" />
+        <option value="CSS File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -31,7 +32,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\virtual_env\e_vote\templates\vote" />
+      <recent name="E:\virtual_env\e_vote\templates\user" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,6 +53,12 @@
       <updated>1585987990808</updated>
       <workItem from="1587089091709" duration="392000" />
       <workItem from="1587091632946" duration="1861000" />
+      <workItem from="1587097554920" duration="16129000" />
+      <workItem from="1587171757275" duration="10596000" />
+      <workItem from="1587257571561" duration="4825000" />
+      <workItem from="1587263869299" duration="22533000" />
+      <workItem from="1587339065988" duration="15555000" />
+      <workItem from="1587541333880" duration="695000" />
     </task>
     <servers />
   </component>
@@ -67,21 +81,25 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="535" y="196" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1586249044722" />
-    <state x="574" y="168" key="FileChooserDialogImpl" timestamp="1586311547801">
+    <state x="574" y="168" key="FileChooserDialogImpl" timestamp="1587098281761">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="574" y="168" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1586311547801" />
-    <state x="137" y="4" key="SettingsEditor" timestamp="1587092971701">
+    <state x="574" y="168" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1587098281761" />
+    <state width="240" height="456" key="HiddenNamespacesPopup" timestamp="1587263921321">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="137" y="4" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587092971701" />
+    <state width="240" height="456" key="HiddenNamespacesPopup/0.0.1366.738@0.0.1366.738" timestamp="1587263921321" />
+    <state x="74" y="28" key="SettingsEditor" timestamp="1587541428012">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="74" y="28" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587541428012" />
     <state x="453" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1587081637710">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="453" y="235" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1587081637710" />
-    <state x="273" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1586955205887">
+    <state x="273" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1587286899010">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="273" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1586955205887" />
+    <state x="273" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1587286899010" />
   </component>
 </project>

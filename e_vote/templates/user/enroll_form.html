@@ -1,0 +1,28 @@
+{% extends 'base1.html' %}
+{% block menu %}
+  <ul id="menu">
+    <li><a href="{{ url_for('user.user_home') }}">主页</a></li>
+    <li class="selected"><a href="{{ url_for('user.notif') }}">竞选公告</a></li>
+    <li><a href="{{ url_for('admin.vote') }}">参与投票</a></li>
+    <li><a href="another_page.html">投票结果</a></li>
+  </ul>
+{% endblock %}
+
+{% block header %}
+  <h1>{% block title %}竞选登记表{% endblock %}</h1>
+  <a class="action" href="{{ url_for('admin.election_register') }}"><h6>返回</h6></a>
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    <label for="name"><h4>姓名</h4></label>
+    <input name="name" id="name" value="{{ request.form['name'] }}" required><br>
+    <label for="candidate_id"><h4>身份证号（用于唯一标识您的身份）</h4></label>
+    <input name="candidate_id" id="candidate_id" value="{{ request.form['candidate_id'] }}" required><br>
+    <label for="info_id"><h4>竞选场次：</h4></label>
+    <input name="info_id" id="info_id" value="{{ request.form['info_id'] }}" required><br>
+    <label for="body"><h4>竞选说明</h4></label>
+    <textarea name="body" id="body" placeholder="选填">{{ request.form['body'] }}</textarea><br>
+    <input type="submit" value="提交" id="save">
+  </form>
+{% endblock %}

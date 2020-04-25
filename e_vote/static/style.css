@@ -1,6 +1,6 @@
 html {
   font-family: arial;
-  background: #c3d7df;
+  background: #e3bd8d;
   padding: 1rem;
 }
 
@@ -14,21 +14,21 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "微软雅黑";
-  color: #377ba8;
+  color: #4d4030;
   margin: 1rem 0;
 }
 
 a {
-  color: #377ba8;
+  color: #4d4030;
 }
 
 hr {
   border: none;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #97846c;
 }
 
 nav {
-  background: lightgray;
+  background: #cfccc9;
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
@@ -37,7 +37,7 @@ nav {
 nav h1 {
   flex: auto;
   margin: 20px;
-  color: #4682B4;
+  color: #4d4030;
 }
 
 nav h1 a {
@@ -146,7 +146,7 @@ div ul#menu li a
   background: transparent;}
 
 ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
-{ color: #377ba8;
+{ color: #4d4030;
   background: transparent url(transparent_light.png) repeat;}
 
 div#signup{
